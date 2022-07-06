@@ -1,5 +1,5 @@
 /*
-Grid-based, Dijkstra, 4-direction movement.
+Grid-based, Dijkstra, 8-direction movement.
 
 Basic algorithm:
 1. From grid map, create g(n) map where each cell on g(n) is distance from that cell to initial position.
@@ -11,6 +11,7 @@ Basic algorithm:
 #include <fstream>
 #include <vector>
 #include <algorithm>
+#include <cmath>
 using namespace std;
 
 int main () {
@@ -43,10 +44,10 @@ int main () {
     int current_cell[2] = {-1,-1};              // index of current cell (in row, col)
     int next_cell[2] = {-1,-1};                 // index of next cell (in row, col)
     vector<vector<int>> g_map;                  // store g(n) values
-    int dist;                                   // distance from init_cell to a free cell
-    int min_dist = 0;                           // minimum distance of a cell to init_cell
-    int max_dist = 0;                           // maximum distance of a cell to init_cell
-    int direction_num = 4;                      // Number of moving direction
+    float dist;                                   // distance from init_cell to a free cell
+    float min_dist = 0;                           // minimum distance of a cell to init_cell
+    float max_dist = 0;                           // maximum distance of a cell to init_cell
+    int direction_num = 8;                      // Number of moving direction
     vector<int> visited_rows;                   // Store visited rows
     vector<int> visited_cols;                   // Store visited columns
     
@@ -136,7 +137,7 @@ int main () {
         {
             if (g_map[i][j] != 1) 
             {
-                dist = abs(i-init_cell[0]) + abs(j-init_cell[1]);
+                dist = sqrt(pow(i-init_cell[0],2) + pow(j-init_cell[1],2));
                 g_map[i][j] = dist;
                 if (dist > max_dist) max_dist = dist; // Find the maximum distance
             }
@@ -171,8 +172,8 @@ int main () {
                 }
                 case 1:
                 {
-                    row = current_cell[0] + 1;  // Down
-                    col = current_cell[1];      // Same
+                    row = current_cell[0] - 1;  // Up
+                    col = current_cell[1] - 1;  // Left
                     break;
                 }
                 case 2:
@@ -183,8 +184,32 @@ int main () {
                 }
                 case 3:
                 {
+                    row = current_cell[0] + 1;  // Down
+                    col = current_cell[1] - 1;  // Left
+                    break;
+                }
+                case 4:
+                {
+                    row = current_cell[0] + 1;  // Down
+                    col = current_cell[1];      // Same
+                    break;
+                }
+                case 5:
+                {
+                    row = current_cell[0] + 1;  // Down
+                    col = current_cell[1] + 1;  // Right
+                    break;
+                }
+                case 6:
+                {
                     row = current_cell[0];      // Same
                     col = current_cell[1] + 1;  // Right
+                    break;
+                }
+                case 7:
+                {
+                    row = current_cell[0] - 1;  // Up
+                    col = current_cell[1] + 1;  // RIght
                     break;
                 }
             }
