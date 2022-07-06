@@ -10,13 +10,13 @@ Examples of Path Planning
   ```sh
   Basic algorithm:
   1. From Grid Map, create g(n) Map where each cell on g(n) is distance from that cell to Initial Position.
-  2. Start from Goal node, move gradually to Initial node by moving to adjacent cell with smallest cost.
+  2. Start from Goal/Initial node, move gradually to Initial node by moving to adjacent cell with smallest cost.
   ```
 * Dijkstra, 8 directions, fixed 100x100 text map, point object, no error margin: `grid-based/grid_dijkstra_8dir_1.cpp`.
 * A-star, 8 directions, fixed 100x100 text map, point object, no error margin: `grid-based/grid_a_star_8dir_1.cpp`.
   ```sh
   Basic algorithm:
-  1. From grid map, create f(n) = g(n) + factor_h*h(n) map where each cell on g(n) is distance from that cell to initial position and each cell on h(n) is heuristic value to the goal
-  2. Start from goal/initial node, move gradually to initial node by moving to adjacent cell with smallest cost.
+  1. From Grid Map, create f(n) = g(n) + factor_h*h(n) Map where each cell on g(n) is distance from that cell to Initial Position and each cell on h(n) is heuristic value to the Goal
+  2. Start from Goal/Initial node, move gradually to Initial node by moving to adjacent cell with smallest cost.
   ```
 
