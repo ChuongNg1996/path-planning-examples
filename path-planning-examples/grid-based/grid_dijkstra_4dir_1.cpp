@@ -185,6 +185,7 @@ int main () {
                 {
                     row = current_cell[0];
                     col = current_cell[1] + 1;
+                    break;
                 }
             }
 
