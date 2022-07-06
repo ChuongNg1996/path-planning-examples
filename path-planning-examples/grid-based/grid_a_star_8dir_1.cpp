@@ -2,7 +2,7 @@
 Grid-based, A-star, 8-direction movement.
 
 Basic algorithm:
-1. From grid map, create f(n) = g(n) + h(n) map where each cell on g(n) is distance from that cell to initial position
+1. From grid map, create f(n) = g(n) + factor_h*h(n) map where each cell on g(n) is distance from that cell to initial position
 and each cell on h(n) is heuristic value to the goal
 2. Start from goal/initial node, move gradually to initial node by moving to adjacent cell with smallest cost.
 
