@@ -23,8 +23,7 @@ Examples of Path Planning
   1. From Grid Map, create f(n) = g(n) + factor_h*h(n) Map where each cell on g(n) is distance from that cell to Initial Position and each cell on h(n) is heuristic value to the Goal
   2. Start from Goal/Initial node, move gradually to Initial node by moving to adjacent cell with smallest cost.
   ```
-* 
-**RRT, 8 directions**, fixed 100x100 text map, point object, no error margin: `grid-based/grid_rrt_8dir_1.cpp`.
+* **RRT, 8 directions**, fixed 100x100 text map, point object, no error margin: `grid-based/grid_rrt_8dir_1.cpp`.
   ```sh
   Basic RRT algorithm:
   1. For each vertice on the RRT Tree, randomly pick a FREE/NEW node on map within a [MAXIMUM DISTANCE] 
