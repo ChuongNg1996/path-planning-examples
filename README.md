@@ -1,7 +1,7 @@
 # Path Planning Examples
 Examples of Path Planning
 
-## Map Formatting.
+## Map Formatting
 * RGB to Greyscale (need OpenCV): use `map-formats/rgb_to_grey.cpp`
 * Text map: GIMP -> Open image -> Export as `.pgm` -> Open exported `.pgm` in an Text Editor -> Modify if neccessary -> save as text.
 
@@ -36,5 +36,5 @@ Examples of Path Planning
   In complete, to do: (1) Revise the *condition* that check for obstacles between cell on RRT tree with new cell (2) Try with much *smaller scale map*.
 
 ## Insights
-These are all speculative insights of the author while implementing the process, not from any source and definitely not definite (jk :)), it's mean they can be very wrong):
+These are all speculative insights of the author while implementing the process, not from any source and definitely not definite :) (it's mean they can be very wrong):
  * On grid-based methods, *Dijkstra, A-star, Potential Field, FFM* have a major common which is assigning **artificial value** to each cell, the differences are in the way those artificial values and path cost are computed. *RRT tree* method is different in this regard because it creates an entirely new type of map (which is the RRT tree) from current grid map.
