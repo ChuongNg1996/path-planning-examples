@@ -2,9 +2,11 @@
 Grid-based, RRT, 8-direction movement.
 
 Basic RRT algorithm:
-1. Randomly pick a FREE/NEW node on map (or near neighbor of initial postion?) within a [MAXIMUM DISTANCE] 
+1. For each vertice on the RRT Tree, randomly pick a FREE/NEW node on map within a [MAXIMUM DISTANCE] 
 2. Connect it to nearest node on the tree.
     -> Obstacle in between them? -> YES -> Ignore
+                                 -> NO -> Add
+3. Stop at goal.
 * Potentiall less node than A* since the nodes are spaced out (within a [MAXIMUM DISTANCE]).
 
 RRT_Star:
